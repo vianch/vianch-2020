@@ -7,7 +7,8 @@
   ],
   "jsRules": {},
   "rules": {
-    "quotemark": [true, "double"]
+    "quotemark": [true, "double"],
+    "semicolon": [true, "always", "ignore-bound-class-methods"]
   },
   "rulesDirectory": []
 }
