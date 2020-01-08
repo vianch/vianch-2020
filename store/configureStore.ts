@@ -1,4 +1,4 @@
-import {Action, applyMiddleware, compose, createStore, Reducer} from "redux";
+import { Action, applyMiddleware, compose, createStore, Reducer } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { logger } from "redux-logger";
 import reduxThunk from "redux-thunk";
@@ -7,11 +7,11 @@ import { environments } from "../config/constants";
 import { httpRequest } from "./middleware/httpRequest";
 import rootReducer from "./rootReducer";
 
-interface DispatchAction extends Action {
+export interface DispatchAction extends Action {
   [key: string]: any;
 }
 
-const configureStore = (initialState = {}) => {
+export const configureStore = (initialState = {}) => {
   let enhancer = compose(applyMiddleware(reduxThunk, httpRequest));
 
   if (process.env.NODE_ENV === environments.DEVELOPMENT) {
@@ -20,9 +20,7 @@ const configureStore = (initialState = {}) => {
     );
   }
 
-  const reducer: Reducer<object, DispatchAction> = (state, action) =>
+  const reducer: Reducer<any, DispatchAction> = (state, action) =>
     rootReducer(state, action);
   return createStore(reducer, initialState, enhancer);
 };
-
-export default configureStore;

@@ -1,6 +1,15 @@
 import * as React from "react";
 import { render } from "react-dom";
+import { Provider } from "react-redux";
 
+import { configureStore } from "../store/configureStore";
 import Counter from "./components/counter/Counter";
 
-render(<Counter />, document.getElementById("main"));
+const store = configureStore();
+
+render(
+  <Provider store={store}>
+    <Counter />
+  </Provider>,
+  document.getElementById("main"),
+);

@@ -10,7 +10,21 @@
     "quotemark": [true, "double"],
     "semicolon": [true, "always", "ignore-bound-class-methods"],
     "interface-name": [true, "never-prefix"],
-    "object-shorthand-properties-first": ["never"]
+    "object-shorthand-properties-first": ["never"],
+    "variable-name": {
+      "options": [
+        "ban-keywords",
+        "check-format",
+        "allow-pascal-case"
+      ]
+    },
+    "import-name": [
+      true,
+      null,
+      { "react": "React" },
+      null,
+      { "ignoreExternalModule": false }
+    ]
   },
   "rulesDirectory": []
 }

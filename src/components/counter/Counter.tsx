@@ -1,29 +1,18 @@
-import * as React from "react";
+import React from "react";
+import { useDispatch } from "react-redux";
 
-export default class Counter extends React.Component {
-  public state = {
-    count: 0,
-  };
+const Counter = () => {
+  const dispatch = useDispatch();
+  const value = 0;
 
-  public increment = () => {
-    this.setState({
-      count: this.state.count + 1,
-    });
-  };
+  return (
+    <div>
+      <span>{value}</span>
+      <button onClick={() => dispatch({ type: "increment-counter" })}>
+        Increment counter
+      </button>
+    </div>
+  );
+};
 
-  public decrement = () => {
-    this.setState({
-      count: this.state.count - 1,
-    });
-  };
-
-  public render() {
-    return (
-      <div>
-        <h1>{this.state.count}</h1>
-        <button onClick={this.increment}>Increment</button>
-        <button onClick={this.decrement}>Decrement</button>
-      </div>
-    );
-  }
-}
+export default Counter;

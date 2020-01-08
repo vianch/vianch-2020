@@ -1,5 +1,9 @@
 import { combineReducers } from "redux";
 
-const reducers = combineReducers({});
+import counterReducer from "../src/components/counter/duck/counter.reducer";
+
+const reducers = combineReducers({
+  counterReducer,
+});
 
 export default reducers;
