@@ -2,7 +2,8 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "~*": ["./*"]
+      "@app/*": ["app/*"],
+      "@config/*": ["app/config/*"]
     },
     /* Basic Options */
     // "incremental": true,                   /* Enable incremental compilation */

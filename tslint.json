@@ -8,7 +8,9 @@
   "jsRules": {},
   "rules": {
     "quotemark": [true, "double"],
-    "semicolon": [true, "always", "ignore-bound-class-methods"]
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "interface-name": [true, "never-prefix"],
+    "object-shorthand-properties-first": ["never"]
   },
   "rulesDirectory": []
 }
