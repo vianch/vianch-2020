@@ -12,10 +12,7 @@ const initialState: CounterState = {
 export const counterReducer = (
   state: CounterState = initialState,
   action: DispatchAction,
-) => {
-  return action.type === counterTypes.ADDING_COUNTER
-    ? {
-      counter: action.counter,
-    }
+) =>
+  action.type === counterTypes.ADDING_COUNTER
+    ? { counter: action.counter }
     : state;
-};
