@@ -1,0 +1,5 @@
+body {
+  background: $primary-color-light;
+  font-family: $font-family;
+  @include font-size(14px);
+}

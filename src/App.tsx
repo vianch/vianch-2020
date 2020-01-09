@@ -3,13 +3,15 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 
 import { configureStore } from "../store/configureStore";
-import Counter from "./components/counter/Counter";
+import Home from "./pages/Home";
+
+import "./styles/index.scss";
 
 const store = configureStore();
 
 render(
   <Provider store={store}>
-    <Counter />
+    <Home />
   </Provider>,
   document.getElementById("main"),
 );

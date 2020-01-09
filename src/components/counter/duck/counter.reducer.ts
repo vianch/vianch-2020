@@ -15,7 +15,7 @@ export const counterReducer = (
 ) => {
   return action.type === counterTypes.ADDING_COUNTER
     ? {
-        counter: action.counter,
-      }
+      counter: action.counter,
+    }
     : state;
 };
