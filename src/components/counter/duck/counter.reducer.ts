@@ -1,9 +1,7 @@
-import { Action } from "redux";
+import { DispatchAction } from "CustomRedux";
+import { counterTypes } from "./counter.types";
 
-import { DispatchAction } from "../../../../store/configureStore";
-import { counterTypes } from "./counter.selector";
-
-interface CounterState {
+export interface CounterState {
   counter: number;
 }
 
@@ -11,19 +9,13 @@ const initialState: CounterState = {
   counter: 0,
 };
 
-const counterReducer = (
+export const counterReducer = (
   state: CounterState = initialState,
   action: DispatchAction,
 ) => {
-  switch (action.type) {
-    case counterTypes.ADDING_COUNTER:
-      return {
-        counter: action.nextCounter,
-      };
-
-    default:
-      return state;
-  }
+  return action.type === counterTypes.ADDING_COUNTER
+    ? {
+      counter: action.counter,
+    }
+    : state;
 };
-
-export default counterReducer;

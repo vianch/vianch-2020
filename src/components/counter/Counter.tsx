@@ -1,16 +1,15 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { doCounter } from "./duck/counter.actions";
+import { getCounter } from "./duck/counter.selector";
 
 const Counter = () => {
   const dispatch = useDispatch();
-  const value = 0;
-
+  const counter = useSelector(getCounter);
   return (
     <div>
-      <span>{value}</span>
-      <button onClick={() => dispatch({ type: "increment-counter" })}>
-        Increment counter
-      </button>
+      <span>{counter}</span>
+      <button onClick={() => dispatch(doCounter(counter))}>Increment counter</button>
     </div>
   );
 };
