@@ -1,0 +1,13 @@
+@import "../../../styles/config/theme";
+@import "../../../styles/config/mixins";
+
+$padding: 15px;
+
+.topbar-wrapper {
+  background: $color-white;
+  width: calc(100% - #{calculateRem($padding * 2)});
+  display: block;
+  height: calculateRem(25px);
+  padding: calculateRem($padding);
+  margin-bottom: $padding;
+}

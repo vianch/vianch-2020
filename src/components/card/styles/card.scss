@@ -1,0 +1,38 @@
+@import "../../../styles/config/theme";
+@import "../../../styles/config/mixins";
+
+$padding: 15px;
+$complete-padding: $padding * 2;
+
+.card-wrapper {
+  background: $color-white;
+  border-bottom: 1px solid $primary-color-grey-light;
+  display: flex;
+  width: calc(100% - #{calculateRem($complete-padding)});
+  height: auto;
+  min-height: calculateRem(50px);
+  padding: calculateRem($padding);
+  margin: 0 0 15px 0;
+}
+
+.card-content {
+  @extend .clearfix;
+}
+
+.card-title,
+.card-text {
+  display: block;
+  width: 100%;
+}
+
+.card-title {
+  @include font-size(14px);
+  color: $primary-color-blue;
+}
+
+.card-text {
+  @include font-size(12px);
+  margin-top: calculateRem(5px);
+  color: $primary-color-grey;
+}
+

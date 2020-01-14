@@ -308,6 +308,12 @@ $bp-xl-2 : 67em;
   @extend %reset-bootstrap-padding;
 }
 
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
 // adaptive
 @mixin respond-to($media) {
   @if $media == low-only {
