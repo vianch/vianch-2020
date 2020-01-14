@@ -12,7 +12,7 @@ const store = configureStore();
 
 render(
   <Provider store={store}>
-    <TopBar menuItems={[]}/>
+    <TopBar menuItems={[]} />
     <Home />
   </Provider>,
   document.getElementById("main"),
